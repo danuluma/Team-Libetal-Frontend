@@ -17,7 +17,7 @@ i.e Code. ML
       providing a scale of how useful is the feature to the product at hand.
 
 ### Structured Approach
-Providing an automated method to calculate code might be quite hard given the number of unknown factors. 
+Providing an automated method to calculate code might be quite hard given the number of unknown variables. 
 But if possible it should be more efficient than this. 
 
 In this design each project must have a set of price regulators and evaluators.
@@ -48,6 +48,15 @@ man-hours/total man-hours.
 ![Pricing sample](../../../../public/images/doc/sample_price_breakdown.png)
 
 ### RoadMap.
+
+
+### Actions
+- View Performance and evaluations
+- View Projects
+- View Contributions
+- View Projects/Bug fix requests
+- 
+
 ### Features implementation
 - Users Account management.
     - Department.
@@ -115,23 +124,23 @@ data.
 # Important Links
 [Program](https://buildforsdg.andela.com/program)
 [Timelines]()
+[Success Guidelines](https://drive.google.com/file/d/1G4y8-V2UyX2nNMdg2T6wh6rglruvW61k/view)
 [GitHub Integration Rules](https://docs.google.com/presentation/d/1hvnwv76gX98nAAgTxJp47CremzwPkfzDkXgejQGz2l0/edit#slide=id.p1)
 
 
 
+[Git Objects](https://youtu.be/1_LFectmOTw)
+
+
+## Libraries Used
+[Git Graph](https://gitgraphjs.com)
+![Git Graph](../../../../public/images/doc/git_graph.png)
+[git2Object](https://github.com/fabien0102/git2json)
 
 How the project earns
 - Sales per app.
 - Hosting and tooling plans.
 - Project management capacity.
 Since you cannot guarantee the success of projects leniency has to be provided in terms of earnings. 
-To encourage project collaborators. To access the platfomr.
+To encourage project collaborators. To access the platform.
 
-***extras**
-- Costing Guidelines
-- Charge by project not by hours
-    - Project estimates
-        - Is the design available
-        - Features
-        - Timelines
-        - Integration

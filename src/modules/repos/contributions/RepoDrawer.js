@@ -32,12 +32,12 @@ export default class RepoDrawer extends View {
                 }}>
                 <div className={classes.toolbar}>
                     <IconButton onClick={handleClose}>
-                        {theme.direction === 'rtl' ? <ChevronRightIcon/> : <ChevronLeftIcon/>}
+                        {theme.direction === "rtl" ? <ChevronRightIcon/> : <ChevronLeftIcon/>}
                     </IconButton>
                 </div>
                 <Divider/>
                 <List >
-                    {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+                    {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
                         <ListItem button key={text}>
                             <ListItemIcon>{index % 2 === 0 ? <InboxIcon/> : <MailIcon/>}</ListItemIcon>
                             <ListItemText primary={text}/>
@@ -46,7 +46,7 @@ export default class RepoDrawer extends View {
                 </List>
                 <Divider/>
                 <List>
-                    {['All mail', 'Trash', 'Spam'].map((text, index) => (
+                    {["All mail", "Trash", "Spam"].map((text, index) => (
                         <ListItem button key={text}>
                             <ListItemIcon>{index % 2 === 0 ? <InboxIcon/> : <MailIcon/>}</ListItemIcon>
                             <ListItemText primary={text}/>

@@ -8,7 +8,7 @@ import HomeIcon from "@material-ui/icons/Home";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import MaterialBtn from "../../../widgets/MaterialBtn";
-import {Redirect} from 'react-router';
+import {Redirect} from "react-router";
 import Button from "@material-ui/core/Button";
 import App from "../../../App";
 import Menu from "@material-ui/core/Menu";

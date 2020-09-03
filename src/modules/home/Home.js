@@ -2,7 +2,7 @@ import * as React from "react";
 import View from "../repos/contributions/View";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
-import AppBar from '@material-ui/core/AppBar';
+import AppBar from "@material-ui/core/AppBar";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import AppsIcon from "@material-ui/icons/Apps";
 import BuildIcon from "@material-ui/icons/Build";
@@ -10,7 +10,7 @@ import PaletteIcon from "@material-ui/icons/Palette";
 // import TimeLineIcon from "@material-ui/icons/TimeLine";
 import AccountTreeIcon from "@material-ui/icons/AccountTree";
 import CreditCardIcon from "@material-ui/icons/CreditCard";
-import SvgIcon from '@material-ui/core/SvgIcon';
+import SvgIcon from "@material-ui/core/SvgIcon";
 import IconButton from "@material-ui/core/IconButton";
 import BugReportIcon from "@material-ui/icons/BugReport";
 import List from "@material-ui/core/List";
@@ -21,9 +21,9 @@ import MaterialBtn from "../../widgets/MaterialBtn";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
-import {createMuiTheme} from '@material-ui/core/styles';
-import purple from '@material-ui/core/colors/purple';
-import green from '@material-ui/core/colors/green';
+import {createMuiTheme} from "@material-ui/core/styles";
+import purple from "@material-ui/core/colors/purple";
+import green from "@material-ui/core/colors/green";
 
 const theme = createMuiTheme({
     palette: {

@@ -7,6 +7,8 @@
 
 # testing
 /coverage
+/public/.sass-cache
+/src/styles/.sass-cache
 
 # production
 /build

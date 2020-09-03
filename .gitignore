@@ -9,6 +9,9 @@
 /coverage
 /public/.sass-cache
 /src/styles/.sass-cache
+/src/styles/dark/.sass-cache
+/src/styles/light/.sass-cache
+/src/styles/variables/.sass-cache
 
 # production
 /build

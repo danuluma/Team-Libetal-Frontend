@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "",
-"sources": [],
+"mappings": "AAAQ,oCAAyB",
+"sources": ["RepoNavLight.module.scss"],
 "names": [],
-"file": "RepoNav.module.css"
+"file": "RepoNavLight.module.css"
 }

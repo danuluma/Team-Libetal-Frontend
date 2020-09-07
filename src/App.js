@@ -27,6 +27,7 @@ class AppComponent extends Component {
                                         <Route exact path="(/|/home)"
                                                component={() => (
                                                    <Home
+                                                       navigator={navigateTo}
                                                        classes={classes}
                                                        appTheme={appTheme}
                                                        theme={theme}
@@ -36,7 +37,7 @@ class AppComponent extends Component {
                                         <Route path="/contributions"
                                                component={() => (
                                                    <Contributions
-                                                       navigator={navigator}
+                                                       navigator={navigateTo}
                                                        classes={classes}
                                                        theme={theme}
                                                        appTheme={appTheme}

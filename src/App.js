@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {BrowserRouter as Router, Route, Switch, withRouter} from "react-router-dom";
+import {Route, Switch, withRouter} from "react-router-dom";
 import Home from "./modules/home/Home";
 import Contributions from "./modules/repos/contributions/Contributions";
 import Theme from "./Theme";
@@ -58,18 +58,18 @@ class AppComponent extends Component {
                                         {/*TODO CREATE FINANCIAL ACCOUNT MANAGER*/}
                                         {/*TODO CREATE BUG AND FEATURES REQUEST SECTION*/}
                                     </Switch>
-                                )
+                                );
                             }
                         }</HoCs>
                     )
             }</Theme>
-        )
+        );
     }
 
 }
 
 
-const App = withRouter(AppComponent)
+const App = withRouter(AppComponent);
 
 
 export default App;

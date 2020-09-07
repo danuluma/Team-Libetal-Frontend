@@ -48,7 +48,7 @@ export default class RegisterDrawer extends Component {
         this.props.toggleDrawer();
         if (this.props.open) {
             this.props.switchForm(form);
-            this.props.toggleDrawer();
+            this.props.toggleDrawer()
         }
     }
 

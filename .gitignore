@@ -12,6 +12,8 @@
 /src/styles/dark/.sass-cache
 /src/styles/light/.sass-cache
 /src/styles/variables/.sass-cache
+/public/scss/components/input/.sass-cache
+/public/scss/body/.sass-cache
 
 
 # production

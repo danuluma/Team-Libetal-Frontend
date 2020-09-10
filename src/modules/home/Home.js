@@ -28,16 +28,22 @@ import green from "@material-ui/core/colors/green";
 const theme = createMuiTheme({
     palette: {
         primary: {
-            main: purple[500],
+            main: purple[500]
         },
         secondary: {
-            main: green[500],
-        },
-    },
+            main: green[500]
+        }
+    }
 });
 
 /*Axios preferred for data loading*/
 export default class Home extends View {
+
+    props = {
+        navigator(link) {
+            console.log(`Requesting for page ${link}`);
+        }
+    };
     state = {
         currentTab: 0,
         currentTabView: (<Typography>Not A Valid Tab</Typography>),
@@ -91,19 +97,20 @@ export default class Home extends View {
                         name: "Kenyan shilling"
                     }
                 }
-            },
+            }
         ]
-    }
+    };
 
     constructor(props) {
         super(props);
 
-        this.handleChange = this.handleChange.bind(this)
+        this.accessAccount = this.accessAccount.bind(this);
+        this.handleChange = this.handleChange.bind(this);
     }
 
 
     componentDidMount() {
-        this.updateTabView(21)
+        this.updateTabView(21);
     }
 
     getLayout({userDetails, appTheme, classes}) {
@@ -176,7 +183,7 @@ export default class Home extends View {
     }
 
     handleChange(event, newValue) {
-        this.updateTabView(newValue)
+        this.updateTabView(newValue);
     }
 
 
@@ -196,22 +203,22 @@ export default class Home extends View {
             case Home.BUGS:
                 view = (
                     <>Bugs</>
-                )
+                );
                 break;
             case Home.ISSUES:
                 view = (
                     <>Issues</>
-                )
+                );
                 break;
             default:
-                return this.updateTabView(Home.DEFAULT_TAB)
+                return this.updateTabView(Home.DEFAULT_TAB);
                 break;
         }
 
         this.setState({
             currentTab: newTab,
             currentTabView: view
-        })
+        });
     }
 
     featuresList() {
@@ -229,8 +236,7 @@ export default class Home extends View {
     }
 
     accessAccount() {
-        // Show Login Modal
-        // Has option for create account if none exists.
+        this.props.navigator("register");
     }
 
     getLoginView(appTheme, classes) {
@@ -239,7 +245,7 @@ export default class Home extends View {
                 <div className={classes.grow}/>
                 <nav className={appTheme.alignChildRight}>
                     <MaterialBtn
-                        onClick={this.accessAccount}
+                        onClick={() => this.accessAccount()}
                         startIcon={<AccountCircleIcon/>}
                         content={"Login/Register"}
                     />
@@ -307,12 +313,12 @@ export default class Home extends View {
                         </IconButton> Skill Investment
                     </ListItem>
                 </List>
-            </Grid>)
+            </Grid>);
     }
 }
 
 Home.create = (userDetails = null, classes, appTheme, theme) =>
-    (<Home classes={classes} appTheme={appTheme} theme={theme} userDetails={userDetails}/>)
+    (<Home classes={classes} appTheme={appTheme} theme={theme} userDetails={userDetails}/>);
 
 
 

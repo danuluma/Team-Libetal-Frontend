@@ -245,6 +245,7 @@ export default class Home extends View {
                 <div className={classes.grow}/>
                 <nav className={appTheme.alignChildRight}>
                     <MaterialBtn
+                        variant={""}
                         onClick={() => this.accessAccount()}
                         startIcon={<AccountCircleIcon/>}
                         content={"Login/Register"}

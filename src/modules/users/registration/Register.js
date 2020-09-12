@@ -89,7 +89,9 @@ export default class Register extends Component {
         userDetails: {
             profileName: "",
             firstName: "",
-            lastName: ""
+            lastName: "",
+            phone: 0,
+            email: ""
         },
         currentForm: Register.PROFILE_FORM
     };
@@ -140,6 +142,7 @@ export default class Register extends Component {
 
 
     bindEvents() {
+        this.onProfileTextChange = this.onProfileTextChange.bind(this);
         this.onLoginClick = this.onLoginClick.bind(this);
         this.toggleDrawer = this.toggleDrawer.bind(this);
         this.onSkillChange = this.onSkillChange.bind(this);
@@ -267,7 +270,7 @@ export default class Register extends Component {
         return skill;
     }
 
-    getNameInputs() {
+    get nameInputs() {
         let profileNameLabel = "Profile Name";
         let firstNameLabel = "First Name";
         let lastNameLabel = "Last Name";
@@ -277,16 +280,10 @@ export default class Register extends Component {
                 <Typography>Name</Typography>
                 <MaterialGrid lg={12}>
                     <MaterialTextField
+                        label={firstNameLabel}
                         value={this.state.userDetails.profileName}
-                        label={"Profile Name"}
-                        placeholder={"Profile"}
-                        InputProps={{
-                            startAdornment: (
-                                <InputAdornment position="start">
-                                    <AccountCircleIcon/>
-                                </InputAdornment>
-                            )
-                        }}
+                        onChange={this.onProfileTextChange}
+                        startIcon={<AccountCircleIcon/>}
                         helperText={"Your displayed app name"}
                     />
                 </MaterialGrid>
@@ -350,13 +347,7 @@ export default class Register extends Component {
                     <MaterialTextField
                         type={"text"}
                         label={"Country"}
-                        InputProps={{
-                            startAdornment: (
-                                <InputAdornment position="start">
-                                    <PublicIcon/>
-                                </InputAdornment>
-                            )
-                        }}
+                        startIcon={<PublicIcon/>}
                     />
                 </MaterialGrid>
                 <MaterialGrid flexGrow={1}>
@@ -379,13 +370,7 @@ export default class Register extends Component {
                         required
                         type={"password"}
                         label={"Password"}
-                        InputProps={{
-                            startAdornment: (
-                                <InputAdornment position="start">
-                                    <LockIcon/>
-                                </InputAdornment>
-                            )
-                        }}/>
+                        startIcon={<LockIcon/>}/>
                 </MaterialGrid>
                 <MaterialGrid flexGrow={1}>
                     <MaterialTextField
@@ -393,13 +378,7 @@ export default class Register extends Component {
                         flexGrow={1}
                         required type={"password"}
                         label={"Password Again"}
-                        InputProps={{
-                            startAdornment: (
-                                <InputAdornment position="start">
-                                    <LockIcon/>
-                                </InputAdornment>
-                            )
-                        }}/>
+                        startIcon={<LockIcon/>}/>
                 </MaterialGrid>
             </MaterialGrid>
         );
@@ -506,7 +485,7 @@ export default class Register extends Component {
             <form className={classes.root}>
                 <Grid container justify={"space-around"}>
                     <Grid container item xs={5} lg={5}>
-                        {this.getNameInputs()}
+                        {this.nameInputs}
                         {this.passwordInputs}
                         {this.phoneInputs}
                         {this.addressInputs}
@@ -576,6 +555,20 @@ export default class Register extends Component {
         this.setState(prevState => ({currentForm}));
     }
 
+    onProfileTextChange(e) {
+
+        let value = e.target.value;
+
+        this.setState(prevState => {
+            let userDetails = prevState.userDetails;
+
+            userDetails.profileName = value;
+
+            return userDetails;
+        });
+
+    }
+
     render() {
 
         let {classes, theme, styles, appTheme} = this.props;
@@ -610,7 +603,7 @@ export default class Register extends Component {
                           justify={"center"}
                           alignItems={"center"}
                           direction="row">
-                        <Avatar src={"images/Branding.png"} style={{height: 100, width: 100}}/>
+                        <Avatar src={"images/branding.png"} style={{height: 100, width: 100}}/>
                     </Grid>
                     <Grid
                         container

@@ -5,10 +5,20 @@ import Contributions from "./modules/repos/contributions/Contributions";
 import Theme from "./Theme";
 import HoCs from "./Hocs";
 import Register from "./modules/users/registration/Register";
+import Dashboard from "./modules/dashboard/Dashboard";
+
 
 class AppComponent extends Component {
 
     static navigate = null;
+
+    navigate = () => {
+        throw new Error("Navigate not implemented");
+    };
+
+    constructor(props) {
+        super(props);
+    }
 
     render() {
         return (
@@ -19,7 +29,7 @@ class AppComponent extends Component {
                             ({navigateTo}) => {
                                 // Do this before app render
                                 // Or consider passing app to all components
-                                App.navigate = navigateTo;
+                                this.navigate = navigateTo;
 
                                 return (
                                     <Switch>
@@ -34,7 +44,7 @@ class AppComponent extends Component {
                                                        userDetails={null}/>
                                                )}/>
 
-                                        <Route path="/contributions"
+                                        <Route path="/(c|C)ontributions"
                                                component={() => (
                                                    <Contributions
                                                        navigator={navigateTo}
@@ -45,8 +55,8 @@ class AppComponent extends Component {
                                                )}
                                         />
 
-                                        <Route path="/(r|R)egister"
-                                               component={() => (
+                                        <Route path="/register"
+                                               component={()=>(
                                                    <Register
                                                        navigator={navigator}
                                                        classes={classes}
@@ -55,6 +65,14 @@ class AppComponent extends Component {
                                                    />
                                                )}
                                         />
+                                        <Route path="/(d|D)ashboard"
+                                               component={() => (
+                                                   <Dashboard
+                                                       context={this}
+                                                       classes={classes}
+                                                   />
+                                               )}/>
+
                                         {/*TODO CREATE DASHBOARD*/}
                                         {/*TODO CREATE FINANCIAL ACCOUNT MANAGER*/}
                                         {/*TODO CREATE BUG AND FEATURES REQUEST SECTION*/}

@@ -15,6 +15,7 @@ import AppBar from "@material-ui/core/AppBar";
 import View from "../../repos/contributions/View";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
+import Settings from "../../../utils/Settings";
 
 export default class RegisterAppBar extends View {
 
@@ -23,12 +24,13 @@ export default class RegisterAppBar extends View {
 
         return (
             <AppBar
-                color={"secondary"}
                 position="static"
                 className={clsx(classes.appBar, {})}>
                 <Toolbar style={{display: "flex", flexDirection: "row !important", alignItems: "right"}}>
                     <IconButton
-                        color="inherit"
+                        style={{
+                            color: Settings.textPrimary
+                        }}
                         aria-label="open drawer"
                         onClick={handleOpen}
                         edge="start">
@@ -41,7 +43,6 @@ export default class RegisterAppBar extends View {
                     <nav>
                         <MaterialBtn
                             style={{marginRight: 10}}
-                            color={"primary"}
                             startIcon={
                                 <Grid container>
                                     <AccountTreeIcon/>
@@ -51,7 +52,6 @@ export default class RegisterAppBar extends View {
 
                         <MaterialBtn
                             style={{marginRight: 10}}
-                            color={"primary"}
                             startIcon={
                                 <Grid container>
                                     <AppsIcon/>
@@ -61,7 +61,6 @@ export default class RegisterAppBar extends View {
 
                         <MaterialBtn
                             style={{marginRight: 10}}
-                            color={"primary"}
                             endIcon={
                                 <Grid container>
                                     <LanguageIcon/>
@@ -72,7 +71,6 @@ export default class RegisterAppBar extends View {
 
                         <Button
                             variant={"contained"}
-                            color="secondary"
                             startIcon={<AccountCircleIcon/>}
                             endIcon={<ExpandMoreIcon/>}>
                             Login

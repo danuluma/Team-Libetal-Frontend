@@ -1,22 +1,33 @@
 import React, {Component} from "react";
 import FormControl from "@material-ui/core/FormControl";
-import {TextField} from "@material-ui/core";
 import MaterialInputLayout from "./MaterialInputLayout";
 import Button from "@material-ui/core/Button";
 import AttachFileIcon from "@material-ui/icons/AttachFile";
-import InputAdornment from "@material-ui/core/InputAdornment";
+import MaterialTextField from "./MaterialTextField";
 
 export default class MaterialFileInput extends Component {
 
     state = {
-        valueText: "Chose File"
+        valueText: "Chose File",
+        color: "secondary"
     };
+
+    constructor(props) {
+        super(props);
+        this.handleBtnClick = this.handleBtnClick.bind(this);
+    }
+
+
+    handleBtnClick(e) {
+
+        console.log(e.target)
+    }
 
     render() {
 
         let {
             disabled = false,
-            color = "primary",
+            color = "secondary",
             labelText = "Cv/Portfolio",
             fullWidth = false,
             style = {},
@@ -34,24 +45,21 @@ export default class MaterialFileInput extends Component {
         return (
             <MaterialInputLayout>
                 <FormControl {...props} >
-                    <TextField
+                    <MaterialTextField
+                        color={"secondary"}
                         style={style}
                         {...props}
                         type={type}
                         disabled={disabled}
                         fullWidth={fullWidth}
-                        InputProps={{
-                            startAdornment: (
-                                <InputAdornment position="start">
-                                    <Button
-                                        startIcon={<AttachFileIcon/>}
-                                        disabled={disabled}
-                                        variant={"contained"} color={color}>
-                                        {labelText}
-                                    </Button>
-                                </InputAdornment>
-                            )
-                        }}
+                        startIcon={<Button
+                            startIcon={<AttachFileIcon/>}
+                            disabled={disabled}
+                            onClick={this.handleBtnClick}
+                            ref={input => this.input = input}
+                            variant={"contained"} color={color}>
+                            {labelText}
+                        </Button>}
                     />
                 </FormControl>
             </MaterialInputLayout>

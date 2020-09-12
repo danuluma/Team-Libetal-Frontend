@@ -4,6 +4,7 @@ import darkTheme from "./styles/dark/Theme.module.css";
 import lightTheme from "./styles/light/Theme.module.css";
 import Settings from "./utils/Settings";
 import {orange} from "@material-ui/core/colors";
+import red from "@material-ui/core/colors/red";
 
 
 const drawerWidth = 240;
@@ -15,37 +16,18 @@ let textSecondary = "";
 const lTheme = createMuiTheme({
     palette: {
         primary: {
-            main: colorPrimary,
-            dark: orange["900"],
-            contrastText: textPrimary
+            main: Settings.colorPrimary,
+            dark: Settings.colorPrimaryDark,
+            contrastText: Settings.textPrimary,
+            light:Settings.colorPrimaryLight
         },
         secondary: {
-            main: "#FFFFFF",
-            dark: orange["900"],
+            main: Settings.colorSecondary,
+            dark: Settings.colorSecondaryDark,
             /**TODO eddit for hover states
              light: "#FFFFFF",
              dark: "#FFFFFF",*/
-            contrastText: colorPrimary
-
-        }
-    }
-});
-
-const dTheme = createMuiTheme({
-    palette: {
-        primary: {
-            main: colorPrimary,
-            dark: orange["900"],
-            contrastText: textPrimary
-        },
-        secondary: {
-            main: "#FFFFFF",
-            dark: orange["900"],
-            /**TODO eddit for hover states
-             light: "#FFFFFF",
-             dark: "#FFFFFF",*/
-            contrastText: colorPrimary
-
+            contrastText: Settings.textSecondary
         }
     }
 });

@@ -104,10 +104,15 @@ export default class Home extends View {
     constructor(props) {
         super(props);
 
-        this.accessAccount = this.accessAccount.bind(this);
-        this.handleChange = this.handleChange.bind(this);
+        this.bindEventListeners();
     }
 
+
+    bindEventListeners() {
+        this.accessAccount = this.accessAccount.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+        this.openDashboard = this.openDashboard.bind(this);
+    }
 
     componentDidMount() {
         this.updateTabView(21);
@@ -239,6 +244,10 @@ export default class Home extends View {
         this.props.navigator("register");
     }
 
+    openDashboard() {
+        this.props.navigator("dashboard");
+    }
+
     getLoginView(appTheme, classes) {
         return (
             <>
@@ -251,6 +260,9 @@ export default class Home extends View {
                         content={"Login/Register"}
                     />
                     <MaterialBtn content={"About Us"}/>
+                    <MaterialBtn
+                        onClick={this.openDashboard}
+                        content={"Dashboard"}/>
                     <MaterialBtn
                         onClick={this.openAppStore}
                         className={[appTheme.btn]}

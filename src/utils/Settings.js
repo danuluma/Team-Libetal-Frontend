@@ -3,7 +3,7 @@ import {amber, cyan, green, orange, red} from "@material-ui/core/colors";
 
 export default class Settings {
 
-    static style = "dark";
+    static style = "light";
 
     static white = "#FFFFFF";
 
